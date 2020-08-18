@@ -85,13 +85,23 @@ label:hover{
   position: relative;
   opacity: 0.8;
 }
-.img-wrap img{
+.uploaded-img{
   min-width: 100%;
   min-height: 100%;
   max-width: 150%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.img-delete {
+  opacity: 0.2;
+  z-index: 10;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
 }
 
 /* modal styles */
