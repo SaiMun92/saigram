@@ -12,9 +12,9 @@ type Props = {
 const ImageGrid: React.FC<Props> = ({ setSelectedImg }) => {
     const { docs } = useFirestore('images');
 
-    const handleDelete = (id: string) => {
+    const handleDelete = (id: string, url: string) => {
         console.log(id);
-        deleter('images', id);
+        deleter('images', id, url);
     };
 
     const handleClick = (e: any , url: string) => {
@@ -37,7 +37,7 @@ const ImageGrid: React.FC<Props> = ({ setSelectedImg }) => {
                                     whileHover={{ opacity: 1}}
                                     alt="delete-icon"
                                     className="img-delete"
-                                    onClick={() => handleDelete(id)}
+                                    onClick={() => handleDelete(id, url)}
                         />
                         <motion.img src={url} alt="uploaded-pic"
                             className="uploaded-img"
