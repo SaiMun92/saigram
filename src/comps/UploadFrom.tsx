@@ -10,7 +10,7 @@ const UploadForm = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         // @ts-ignore
         let selected = e.target.files[0];
-
+        console.log(selected)
         if (selected && types.includes(selected.type)) {
             setFile(selected);
             setError('');

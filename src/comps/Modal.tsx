@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 
-type Props = {
+interface Props {
     selectedImg: string | null,
     setSelectedImg: React.Dispatch<React.SetStateAction<string | null>>
 }
