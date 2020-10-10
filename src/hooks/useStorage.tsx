@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
 import { projectStorage, projectFirestore, timestamp } from '../firebase/config';
 
-const useStorage = (file: File) => {
+type useStorageReturn = {
+    progress: number | null,
+    url: String | null,
+    error: Error | null,
+}
+
+const useStorage = (file: File): useStorageReturn => {
     const [progress, setProgress] = useState<number | null>(0);
     const [error, setError] = useState<Error | null>(null);
     const [url, setUrl] = useState<String | null>(null);

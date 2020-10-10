@@ -7,7 +7,7 @@ export const handlers = [
         return res(
             ctx.status(200),
             ctx.json(
-                [{text: "Genius is one percent inspiration and ninety-nine percent perspiration.", author: "Thomas Edison"}],
+                [{text: "Sai is a genius", author: "Thomas Edison"}],
             )
         )
     }),

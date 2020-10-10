@@ -1,14 +1,17 @@
 import React from "react";
 import {mount, shallow} from "enzyme";
 import Title from "../Title";
-import { server } from "../../mocks/server";
-import { render, fireEvent, screen, waitForElement } from '@testing-library/react';
+import {act} from "react-dom/test-utils";
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 
-// Establish API mocking before all tests.
-beforeAll(() => server.listen())
-afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
 
+const waitForComponentToPaint = async (wrapper: any) => {
+    await act(async () => {
+        await new Promise(resolve => setTimeout(resolve, 0));
+        wrapper.update();
+    });
+};
 
 describe("Title", () => {
 
@@ -22,9 +25,19 @@ describe("Title", () => {
         expect(wrapper.find('h2').text()).toEqual('Your Pictures');
     })
 
-    it("Ensure api is fetched and quote is set", () => {
-        render(<Title />);
+    it("Ensure api is fetched and quote is set",(done) => {
+        // https://stackoverflow.com/questions/55388587/how-should-i-test-react-hook-useeffect-making-an-api-call-with-typescript
 
-    })
+        const mock = new MockAdapter(axios);
+        mock.onGet('https://type.fit/api/quotes').reply(200,
+            [{text: "Sai is a genius", author: "Thomas Edison"}]);
+        const component = mount(<Title />);
+        waitForComponentToPaint(component);
+        setImmediate(() => {
+            component.update();
+            expect(component.find('p').text()).toEqual('Sai is a genius - Thomas Edison');
+            done();
+        });
+    });
 
 })
