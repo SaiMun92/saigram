@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/saigram/static/css/main.007327bc.chunk.css",
+    "main.js": "/saigram/static/js/main.bbb59370.chunk.js",
+    "main.js.map": "/saigram/static/js/main.bbb59370.chunk.js.map",
+    "runtime-main.js": "/saigram/static/js/runtime-main.dce04af5.js",
+    "runtime-main.js.map": "/saigram/static/js/runtime-main.dce04af5.js.map",
+    "static/js/2.50f684d0.chunk.js": "/saigram/static/js/2.50f684d0.chunk.js",
+    "static/js/2.50f684d0.chunk.js.map": "/saigram/static/js/2.50f684d0.chunk.js.map",
+    "index.html": "/saigram/index.html",
+    "precache-manifest.e4a993a5cd220e2ebb5d9f1d6b185a45.js": "/saigram/precache-manifest.e4a993a5cd220e2ebb5d9f1d6b185a45.js",
+    "service-worker.js": "/saigram/service-worker.js",
+    "static/css/main.007327bc.chunk.css.map": "/saigram/static/css/main.007327bc.chunk.css.map",
+    "static/js/2.50f684d0.chunk.js.LICENSE.txt": "/saigram/static/js/2.50f684d0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dce04af5.js",
+    "static/js/2.50f684d0.chunk.js",
+    "static/css/main.007327bc.chunk.css",
+    "static/js/main.bbb59370.chunk.js"
+  ]
+}
